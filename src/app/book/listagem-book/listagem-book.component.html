@@ -1,0 +1,20 @@
+<div class="container">
+  <mat-card *ngFor="let book of books" class="book-card">
+    <mat-card-header>
+      <mat-card-title>
+        {{ book.title }}
+      </mat-card-title>
+      <mat-card-subtitle *ngIf="book.author">
+        {{ book.author }}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      {{book.synopsis}}
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-fab class="buttons" color="primary" (click)="deleteBook(book)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
